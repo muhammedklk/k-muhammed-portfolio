@@ -1,0 +1,136 @@
+/* --- Responsive Styles --- */
+
+/* Tablet / Laptop small - Reduce cursor size further */
+@media (max-width: 1024px) {
+    :root {
+        --cursor-size: 6px;
+        --cursor-outline-size: 24px;
+    }
+
+    body.hovering .cursor-outline {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+/* Featured Works Stack - Mobile/Tablet */
+@media (max-width: 992px) {
+    .stack-wrapper {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .stack-card {
+        flex-direction: column !important;
+        height: 520px !important;
+        width: 92% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-img-col {
+        width: 100% !important;
+        height: 220px !important;
+        overflow: hidden;
+    }
+
+    .card-img-col img,
+    .card-img-col div[class^="card-gradient-"] {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover;
+    }
+
+    .card-content-col {
+        width: 100% !important;
+        height: 300px !important;
+        padding: 25px !important;
+        justify-content: flex-start !important;
+        background: #fff;
+    }
+}
+
+/* General Mobile (768px) */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 0;
+    }
+
+    .logo-creative {
+        font-size: 1.4rem;
+    }
+
+    .logo-creative .dot {
+        width: 6px;
+        height: 6px;
+        margin-top: 6px;
+    }
+
+    .nav-desktop,
+    .header .btn-primary {
+        display: none !important;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-overlay a {
+        font-size: 2rem;
+        margin: 10px 0;
+    }
+
+    .menu-overlay .btn {
+        padding: 10px 20px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .accordion-body {
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+    }
+
+    .accordion-header {
+        padding: 18px 0;
+    }
+
+    .accordion-title {
+        font-size: 1.05rem;
+    }
+}
+
+/* Small Smartphone (425px) */
+@media (max-width: 426px) {
+
+    /* Hide custom cursor on small mobile only */
+    .cursor-dot,
+    .cursor-outline {
+        display: none !important;
+    }
+
+    .hero-reveal.hero-arrow-container {
+        bottom: -11px !important;
+        display: none !important;
+    }
+
+    .mt-200 {
+        margin-top: 101px !important;
+        margin-bottom: 80px;
+    }
+
+    .stack-card {
+        flex-direction: column !important;
+        height: 440px !important;
+        width: 92% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fs-2-rem {
+        font-size: 22px !important;
+        line-height: 1.5 !important;
+        color: var(--color-text-light) !important;
+    }
+
+
+}
