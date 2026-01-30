@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://muhammedklk.github.io/k-muhammed/sitemap.xml
