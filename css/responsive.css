@@ -50,52 +50,185 @@
     }
 }
 
-/* General Mobile (768px) */
-@media (max-width: 768px) {
+/* --- Responsive Header & Navigation --- */
+
+/* Laptops / Tablets (Up to 1200px) */
+@media (max-width: 1200px) {
+    .nav-link {
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Tablet Landscape (Up to 991px) - Switch to Mobile Nav */
+/* Tablet Landscape (Up to 991px) - Switch to Mobile Nav */
+@media (max-width: 991px) {
     .header {
         padding: 20px 0;
     }
 
-    .logo-creative {
-        font-size: 1.4rem;
-    }
-
-    .logo-creative .dot {
-        width: 6px;
-        height: 6px;
-        margin-top: 6px;
-    }
-
-    .nav-desktop,
-    .header .btn-primary {
+    /* Hide Desktop Nav only */
+    .d-none.d-lg-block {
         display: none !important;
     }
 
-    .menu-toggle {
-        display: flex;
-    }
-
-    .menu-overlay a {
-        font-size: 2rem;
-        margin: 10px 0;
-    }
-
-    .menu-overlay .btn {
+    /* Adjust button styling for tablet */
+    .btn-header {
         padding: 10px 20px !important;
         font-size: 0.85rem !important;
     }
 
-    .accordion-body {
+    .menu-toggle {
+        display: flex;
+        margin-left: 15px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        /* Ensure actions push right */
+    }
+}
+
+/* Mobile & Small Tablets (Up to 768px) */
+/* Mobile & Small Tablets (Up to 768px) */
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 20px;
+        width: 92%;
+        /* Slightly narrower on mobile */
+    }
+
+    .logo-creative {
+        width: auto;
+        height: auto;
+        font-size: 1.3rem;
+        background: none;
+    }
+
+    .logo-creative .dot {
+        margin-top: 6px;
+    }
+
+    /* Ensure only menu toggle is visible if buttons are hidden by HTML classes */
+    .menu-toggle {
+        padding: 0;
+        margin-left: auto;
+    }
+
+    .menu-overlay-links a {
+        font-size: 2.5rem;
+        margin: 15px 0;
+    }
+}
+
+/* Very Small Devices (Up to 480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 0;
+    }
+
+    .logo-creative {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+}
+
+/* --- Hero Section Responsiveness --- */
+@media (max-width: 991px) {
+    .hero {
+        height: auto;
+        min-height: 90vh;
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+
+    .first,
+    .second {
+        width: 70px;
+        border-radius: 12px;
+        border-width: 3px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
+    .first,
+    .second {
+        display: inline-block !important;
+        width: 50px;
+        height: 30px;
+        /* aspect ratio check, or auto */
+        height: auto;
+        border-width: 2px;
+        border-radius: 8px;
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+
+    .display-1 {
+        font-size: clamp(2.8rem, 10vw, 4rem);
+        line-height: 1.1;
+    }
+
+    .hero-reveal.hero-arrow-container {
+        display: none !important;
+    }
+
+    .section-icon-3d {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+    .display-1 {
+        font-size: 2.5rem;
+    }
+
+    .typewriter-prefix {
         font-size: 0.9rem;
-        padding-bottom: 20px;
     }
 
-    .accordion-header {
-        padding: 18px 0;
+    .first,
+    .second {
+        width: 40px;
+        border-width: 1.5px;
+        border-radius: 6px;
+    }
+}
+
+/* --- Spacing & Typography Utilities Responsiveness --- */
+@media (max-width: 991px) {
+    .mt-200 {
+        margin-top: 140px !important;
+        margin-bottom: 60px;
     }
 
-    .accordion-title {
-        font-size: 1.05rem;
+    .fs-2-rem {
+        font-size: 1.6rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .mt-200 {
+        margin-top: 120px !important;
+        margin-bottom: 50px;
+    }
+
+    .fs-2-rem {
+        font-size: 1.4rem !important;
     }
 }
 
@@ -109,13 +242,12 @@
     }
 
     .hero-reveal.hero-arrow-container {
-        bottom: -11px !important;
         display: none !important;
     }
 
     .mt-200 {
-        margin-top: 101px !important;
-        margin-bottom: 80px;
+        margin-top: 110px !important;
+        margin-bottom: 40px;
     }
 
     .stack-card {
@@ -127,10 +259,51 @@
     }
 
     .fs-2-rem {
-        font-size: 22px !important;
+        font-size: 1.2rem !important;
         line-height: 1.5 !important;
-        color: var(--color-text-light) !important;
     }
 
+    .photo-container {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3/4;
+    }
+}
 
+/* --- Footer Responsiveness --- */
+@media (max-width: 991px) {
+    .footer {
+        width: 92%;
+        /* Keep floating but slightly wider */
+        padding: 60px 20px 30px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-cta h2 {
+        font-size: 2.2rem;
+    }
+
+    .btn-primary-footer {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        margin-bottom: 0;
+    }
+
+    .footer-btn-wrapper {
+        margin-bottom: 30px;
+    }
 }

@@ -1,0 +1,170 @@
+/* --- Capability Grid Skills Section --- */
+.capability-grid-section {
+    background: #fff;
+}
+
+.cap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.cap-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 32px;
+    padding: 50px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cap-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.cap-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    border-color: #ddd;
+    background: #fff;
+}
+
+.cap-card:hover::before {
+    opacity: 1;
+}
+
+.cap-icon-wrap {
+    width: 70px;
+    height: 70px;
+    background: #000;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
+}
+
+.cap-icon-wrap i {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.cap-card:hover .cap-icon-wrap {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.cap-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cap-header {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.cap-num {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #bbb;
+}
+
+.cap-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.cap-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+.cap-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.stack-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: #999;
+}
+
+.stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.stack-items span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #000;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.stack-items span:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+    .cap-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .cap-card {
+        padding: 40px 35px;
+    }
+
+    .cap-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cap-card {
+        padding: 35px 25px;
+    }
+
+    .cap-icon-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cap-icon-wrap i {
+        font-size: 1.5rem;
+    }
+
+    .cap-title {
+        font-size: 1.5rem;
+    }
+}

@@ -47,122 +47,130 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container-fluid px-5">
-            <div class="d-flex justify-content-between align-items-center">
-                <a href="index.html" class="logo-creative hover-target">
-                    <span>Muhammed</span>
-                    <div class="dot"></div>
-                </a>
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="logo-creative">
+                <span>Muhammed</span>
+                <div class="dot"></div>
+            </a>
 
-                <nav class="nav-desktop d-none d-md-flex align-items-center">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="workNew.html" class="nav-link">Works</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </nav>
-
-                <div class="d-flex align-items-center">
-                    <a href="https://forms.google.com" target="_blank"
-                        class="btn btn-primary btn-header hover-target d-none d-md-inline-flex">Start Now</a>
-                    <a href="assets/MUHAMMED-K.pdf" download
-                        class="btn btn-secondary btn-header hover-target d-none d-md-inline-flex ms-2">Download CV</a>
-                    <button class="menu-toggle hover-target">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+            <!-- Right: Actions -->
+            <div class="header-actions">
+                <button class="menu-toggle hover-target">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="menu-overlay">
-        <a href="index.html" class="hover-target">Home</a>
-        <a href="about.html" class="hover-target">About</a>
-        <a href="workNew.html" class="hover-target">Works</a>
-        <a href="contact.html" class="hover-target">Contact</a>
-        <a href="assets/MUHAMMED-K.pdf" download class="btn btn-secondary hover-target mt-4">Download CV</a>
-        <a href="https://forms.google.com" target="_blank" class="btn btn-primary hover-target mt-3">Start Now</a>
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu">
+        <nav class="sidebar-nav">
+            <!-- Home -->
+            <a href="index.html" class="sidebar-link hover-target" title="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <!-- About -->
+            <a href="about.html" class="sidebar-link hover-target" title="About">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <!-- Works -->
+            <a href="workNew.html" class="sidebar-link hover-target" title="Work">
+                <i class="fa-solid fa-layer-group"></i>
+            </a>
+            <!-- Contact -->
+            <a href="contact.html" class="sidebar-link hover-target" title="Contact">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </nav>
     </div>
 
     <div id="smooth-wrapper">
         <div id="smooth-content">
 
-            <section class="section mt-200 min-vh-80">
-                <div class="container">
+            <!-- Subpage Hero -->
+            <section class="sub-hero ultra-hero">
+                <div class="container-fluid px-lg-5">
                     <div class="row align-items-center">
-                        <div class="col-lg-7">
-                            <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/boy-dynamic-gradient.png"
-                                alt="Muhammed - UI UX Designer Portfolio Picture"
-                                class="section-icon-3d mb-4 hero-reveal">
-                            <h1 class="display-1 mb-5 hero-reveal">About Me</h1>
-                            <p class="display-2 hero-reveal opacity-8 fs-2-rem">
-                                I'm Muhammed, a passionate UI/UX Designer & Front-End Developer based in India. I
-                                believe in the power of simplicity and the impact of good design.
+                        <div class="col-lg-8">
+                            <span class="ultra-hero-sub hero-reveal"><i class="fa-solid fa-fingerprint me-2"></i> The
+                                Philosophy</span>
+                            <h1 class="ultra-hero-title hero-reveal mt-4 text-start">
+                                Humanizing complexity <br> through <span class="text-serif">logic</span> & intent.
+                            </h1>
+                            <p class="ultra-hero-desc hero-reveal mt-5 text-start fs-4">
+                                Based in India, I operate at the intersection of design and development, building
+                                products that solve real problems through simplified interfaces.
                             </p>
                         </div>
-                        <div class="col-lg-5 text-center mt-5 mt-lg-0 fade-up">
-                            <!-- Option to provide photo -->
+                        <div class="col-lg-4 text-center mt-5 mt-lg-0 fade-up">
                             <div class="photo-container mx-auto">
-                                <img src="assets/images/about/abt-img.jpg"
-                                    alt="Muhammed - UI UX Designer and Front-End Developer" class="user-photo-img"
-                                    id="userPhoto">
+                                <img src="assets/images/about/muhammed-portrait.jpg" alt="Muhammed - UI UX Designer"
+                                    class="user-photo-img">
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section" style="padding-bottom: 100px;">
-                <div class="container">
-                    <div class="row mb-5">
+            <!-- Editorial Content: Journey -->
+            <section class="section-padding-lg">
+                <div class="container-fluid px-lg-5">
+                    <div class="row">
                         <div class="col-lg-4 fade-up">
-                            <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/medal-dynamic-gradient.png"
-                                alt="Muhammed's Professional Journey and Experience Index" class="section-icon-3d">
-                            <h3>My Journey</h3>
+                            <span class="p-num">01</span>
+                            <span class="p-label"><i class="fa-solid fa-mountain-sun me-2"></i> The Journey</span>
+                            <h2 class="p-title" style="font-size: 3rem;">From Curiosity <br>to <span
+                                    class="text-serif">Craft</span>.</h2>
                         </div>
-                        <div class="col-lg-8 fade-up">
-                            <p class="text-lg text-muted">Started with a curiosity for code, evolved into a love for
+                        <div class="col-lg-7 offset-lg-1 fade-up">
+                            <p class="p-desc fs-4 mb-5">Started with a curiosity for code, evolved into a love for
                                 design. Over the years, I've honed my skills in creating seamless digital experiences
-                                that solve real problems. My background in both development and design allows me to
-                                unify the creative vision with technical feasibility.</p>
+                                that solve real problems.</p>
+                            <p class="p-desc fs-5 opacity-7">My background in both development and design allows me to
+                                unify the creative vision with technical feasibility. I believe that every pixel should
+                                serve a purpose, and every line of code should empower that purpose.</p>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="row mb-5">
-                        <div class="col-lg-12 fade-up">
-                            <div class="d-flex align-items-center mb-4">
-                                <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/key-dynamic-gradient.png"
-                                    alt="Muhammed Core Capabilities and Tech Stack" class="section-icon-3d mb-0 me-3">
-                                <h3 class="mb-0">Capabilities</h3>
-                            </div>
-                            <div class="skills-grid mt-4">
-                                <!-- Design Category -->
-                                <div class="skill-category-card">
-                                    <h3>
-                                        <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/camera-dynamic-gradient.png"
-                                            style="width: 40px; margin-bottom: 0;" alt="">
-                                        UI/UX Design
-                                    </h3>
-                                    <div class="skill-list">
-                                        <span class="skill-badge">Figma</span>
-                                        <span class="skill-badge">UX Research</span>
-                                        <span class="skill-badge">Branding</span>
-                                        <span class="skill-badge">Prototyping</span>
+            <!-- Skill Landscape: Simple & Smoll Redesign -->
+            <section class="section-padding-lg bg-light-soft border-top border-bottom">
+                <div class="container-fluid px-lg-5">
+                    <div class="row">
+                        <div class="col-lg-4 fade-up">
+                            <span class="p-num"><i class="fa-solid fa-cubes-stacked me-2"></i> Capabilities</span>
+                            <h2 class="p-title" style="font-size: 2.8rem;">Technical <br><span
+                                    class="text-serif">Expertise</span>.</h2>
+                        </div>
+                        <div class="col-lg-8 fade-up mt-4 mt-lg-0">
+                            <div class="skill-mini-grid">
+                                <div class="skill-category mb-5">
+                                    <span class="p-label mb-3 d-block">Design & Strategy</span>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="s-tag">Figma</span>
+                                        <span class="s-tag">UI/UX</span>
+                                        <span class="s-tag">Wireframing</span>
+                                        <span class="s-tag">Prototyping</span>
+                                        <span class="s-tag">User Research</span>
+                                        <span class="s-tag">Branding</span>
+                                        <span class="s-tag">Typography</span>
+                                        <span class="s-tag">Visual Identity</span>
                                     </div>
                                 </div>
-                                <!-- Development Category -->
-                                <div class="skill-category-card">
-                                    <h3>
-                                        <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/computer-dynamic-gradient.png"
-                                            style="width: 40px; margin-bottom: 0;" alt="">
-                                        Development
-                                    </h3>
-                                    <div class="skill-list">
-                                        <span class="skill-badge">Web Development</span>
-                                        <span class="skill-badge">Responsive Design</span>
-                                        <span class="skill-badge">GSAP Motion</span>
+                                <div class="skill-category">
+                                    <span class="p-label mb-3 d-block">Development & Motion</span>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="s-tag s-dark">HTML5</span>
+                                        <span class="s-tag s-dark">CSS3</span>
+                                        <span class="s-tag s-dark">JavaScript</span>
+                                        <span class="s-tag s-dark">React</span>
+                                        <span class="s-tag s-dark">GSAP</span>
+                                        <span class="s-tag s-dark">Bootstrap</span>
+                                        <span class="s-tag s-dark">Performance</span>
+                                        <span class="s-tag s-dark">SEO</span>
+                                        <span class="s-tag s-dark">Web Apps</span>
                                     </div>
                                 </div>
                             </div>
@@ -171,34 +179,45 @@
                 </div>
             </section>
 
-            <footer class="footer">
-                <div class="container text-center">
-                    <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/gift-dynamic-gradient.png"
-                        alt="CTA Icon" class="section-icon-3d mx-auto mb-4 scale-up">
-                    <h2 class="display-2 footMnText mb-4">Let's Work Together</h2>
-                    <p class="text-muted footMnText mb-5">Have a project in mind?</p>
-                    <a href="contact.html" class="btn btn-primary hover-target mb-5">Get in Touch</a>
-
-                    <div class="d-flex justify-content-center mb-5">
-                        <a href="https://instagram.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://linkedin.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://facebook.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://wa.me/919656216086" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-whatsapp"></i></a>
+            <!-- High-End Editorial Footer -->
+            <footer class="editorial-footer fade-up">
+                <div class="container-fluid px-lg-5">
+                    <div class="row footer-main-content align-items-center">
+                        <div class="col-lg-7">
+                            <h2 class="ultra-title text-start" style="font-size: 3.5rem;">Let's build <span
+                                    class="text-serif">extraordinary</span> <br> digital <span
+                                    class="text-italic-ultra">territories</span>.</h2>
+                        </div>
+                        <div class="col-lg-5 text-lg-end">
+                            <div class="footer-availability">
+                                <div class="pulse-dot"></div>
+                                <span>I'm currently available for freelance work</span>
+                            </div>
+                            <a href="mailto:muhammedklkm@gmail.com"
+                                class="footer-email-link magnetic">muhammedklkm@gmail.com</a>
+                        </div>
                     </div>
 
-                    <div class="border-top border-secondary pt-4">
-                        <p class="opacity-5 fs-0-9">&copy; 2025 Muhammed. All Rights Reserved.</p>
-                        <p class="opacity-5 fs-0-9">muhammedklkm@gmail.com | +91 9656 216 086</p>
+                    <div class="footer-bottom-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="footer-copyright">&copy; 2025 Muhammed K. Built with precision.</p>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <div class="footer-social-minimal">
+                                    <a href="#" class="hover-target">Instagram</a>
+                                    <a href="#" class="hover-target">LinkedIn</a>
+                                    <a href="#" class="hover-target">X (Twitter)</a>
+                                    <a href="#" class="hover-target">WhatsApp</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>
         </div>
+    </div>
+    </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -47,180 +47,177 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container-fluid px-5">
-            <div class="d-flex justify-content-between align-items-center">
-                <a href="index.html" class="logo-creative hover-target">
-                    <span>Muhammed</span>
-                    <div class="dot"></div>
-                </a>
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="logo-creative">
+                <span>Muhammed</span>
+                <div class="dot"></div>
+            </a>
 
-                <nav class="nav-desktop d-none d-md-flex align-items-center">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="workNew.html" class="nav-link">Works</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </nav>
-
-                <div class="d-flex align-items-center">
-                    <a href="https://forms.google.com" target="_blank"
-                        class="btn btn-primary btn-header hover-target d-none d-md-inline-flex">Start Now</a>
-                    <a href="assets/MUHAMMED-K.pdf" download
-                        class="btn btn-secondary btn-header hover-target d-none d-md-inline-flex ms-2">Download CV</a>
-                    <button class="menu-toggle hover-target">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+            <!-- Right: Actions -->
+            <div class="header-actions">
+                <button class="menu-toggle hover-target">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="menu-overlay">
-        <a href="index.html" class="hover-target">Home</a>
-        <a href="about.html" class="hover-target">About</a>
-        <a href="workNew.html" class="hover-target">Works</a>
-        <a href="contact.html" class="hover-target">Contact</a>
-        <a href="assets/MUHAMMED-K.pdf" download class="btn btn-secondary hover-target mt-4">Download CV</a>
-        <a href="https://forms.google.com" target="_blank" class="btn btn-primary hover-target mt-3">Start Now</a>
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu">
+        <nav class="sidebar-nav">
+            <!-- Home -->
+            <a href="index.html" class="sidebar-link hover-target" title="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <!-- About -->
+            <a href="about.html" class="sidebar-link hover-target" title="About">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <!-- Works -->
+            <a href="workNew.html" class="sidebar-link hover-target" title="Work">
+                <i class="fa-solid fa-layer-group"></i>
+            </a>
+            <!-- Contact -->
+            <a href="contact.html" class="sidebar-link hover-target" title="Contact">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </nav>
     </div>
 
     <div id="smooth-wrapper">
         <div id="smooth-content">
 
-            <section class="section mt-200">
-                <div class="container">
-                    <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/star-dynamic-gradient.png"
-                        alt="Works Icon" class="section-icon-3d mb-4 hero-reveal">
-                    <h1 class="display-1 mb-5 hero-reveal">Selected Projects</h1>
-
-
-                    <div class="row">
-                        <div class="col-md-6 ">
-                            <!-- Project 1 -->
-                            <div class="project-item mb-150-imp fade-up">
-                                <a href="#" class="project-card-container hover-target">
-                                    <div class="project-gradient-1">
-                                        <img src="assets/images/work/mb.jpg" alt="">
-                                    </div>
-                                </a>
-                                <div class="row align-items-start">
-                                    <div class="col-lg-9">
-                                        <h2 class="display-5 mb-3">Modern Brand</h2>
-                                        <p class="text-lg text-muted">A modern e-commerce furniture website designed to
-                                            showcase premium products with a clean, seamless shopping experience.</p>
-                                    </div>
-                                    <div class="col-lg-3 text-lg-end">
-                                        <p class="text-muted mb-0">Design</p>
-                                        <div class="mt-1">
-                                            <span class="skill-tag">Development</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Project 2 -->
-                            <div class="project-item mb-150-imp fade-up">
-                                <a href="#" class="project-card-container hover-target">
-                                    <div class="project-gradient-2">
-                                        <img src="assets/images/work/icon.jpg" alt="">
-                                    </div>
-                                </a>
-                                <div class="row align-items-start">
-                                    <div class="col-lg-9">
-                                        <h2 class="display-5 mb-3">icon</h2>
-                                        <p class="text-lg text-muted">A luxury hotel website designed to showcase
-                                            destinations, experiences, and effortless booking through a clean, immersive
-                                            interface.</p>
-                                    </div>
-                                    <div class="col-lg-3 text-lg-end">
-                                        </p>
-                                        <div class="mt-1">
-                                            <span class="skill-tag">Design</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Project 3 -->
-                            <div class="project-item mb-150-imp fade-up">
-                                <a href="#" class="project-card-container hover-target">
-                                    <div class="project-gradient-2">
-                                        <img src="assets/images/work/gt.jpg" alt="">
-                                    </div>
-                                </a>
-                                <div class="row align-items-start">
-                                    <div class="col-lg-9">
-                                        <h2 class="display-5 mb-3">Green track</h2>
-                                        <p class="text-lg text-muted">A logistics platform designed to simplify shipping
-                                            with clear tracking, smart workflows, and a seamless user experience.</p>
-                                    </div>
-                                    <div class="col-lg-3 text-lg-end">
-                                        <p class="text-muted mb-0">Design</p>
-                                        <div class="mt-1 gfg">
-                                            <span class="skill-tag">Development</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- Project 4 -->
-                            <div class="project-item mb-150-imp fade-up">
-                                <a href="https://elve.vercel.app/" target="_blank"
-                                    class="project-card-container hover-target">
-                                    <div class="project-gradient-2">
-                                        <img src="assets/images/work/elve-desktop.png" alt="ELVE Website Mockup">
-                                    </div>
-                                </a>
-                                <div class="row align-items-start">
-                                    <div class="col-lg-9">
-                                        <h2 class="display-5 mb-3">ELVÉ</h2>
-                                        <p class="text-lg text-muted">A premium car rental platform designed for
-                                            elegance and ease, offering a seamless booking experience.</p>
-                                    </div>
-                                    <div class="col-lg-3 text-lg-end">
-                                        <p class="text-muted mb-0">Web Design • Development • 2024</p>
-                                        <div class="mt-1 gfg">
-                                            <span class="skill-tag">Design</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+            <!-- Subpage Hero -->
+            <section class="sub-hero ultra-hero">
+                <div class="container-fluid px-lg-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <span class="ultra-hero-sub hero-reveal"><i class="fa-solid fa-briefcase me-2"></i>
+                                Portfolio</span>
+                            <h1 class="ultra-hero-title hero-reveal mt-4 text-start">
+                                Selected works <br> & digital <span class="text-serif">studies</span>.
+                            </h1>
+                            <p class="ultra-hero-desc hero-reveal mt-5 text-start fs-4">
+                                A curated selection of projects where technical logic meets creative intuition.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Project Matrix Grid -->
+            <section class="section-padding-lg pt-0">
+                <div class="container-fluid px-lg-5">
+                    <div class="row g-5">
+                        <!-- Project 1 -->
+                        <div class="col-md-6 fade-up">
+                            <a href="#" class="p-card">
+                                <div class="p-card-media">
+                                    <img src="assets/images/work/mb.jpg" alt="Modern Brand">
+                                </div>
+                                <div class="p-card-info">
+                                    <span class="p-card-label"><i class="fa-solid fa-swatchbook me-2"></i> Branding &
+                                        UI</span>
+                                    <h3 class="p-card-title">Modern Brand</h3>
+                                    <div class="p-card-tags">
+                                        <span class="p-card-tag">Identity</span>
+                                        <span class="p-card-tag">Web Design</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-            <footer class="footer">
-                <div class="container text-center">
-                    <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/gradient/gift-dynamic-gradient.png"
-                        alt="CTA Icon" class="section-icon-3d mx-auto mb-4 scale-up">
-                    <h2 class="display-2 footMnText mb-4">Let's Work Together</h2>
-                    <p class="text-muted footMnText mb-5">Have a project in mind?</p>
-                    <a href="contact.html" class="btn btn-primary hover-target mb-5">Get in Touch</a>
+                        <!-- Project 2 -->
+                        <div class="col-md-6 fade-up">
+                            <a href="#" class="p-card">
+                                <div class="p-card-media">
+                                    <img src="assets/images/work/icon.jpg" alt="ICON">
+                                </div>
+                                <div class="p-card-info">
+                                    <span class="p-card-label"><i class="fa-solid fa-mobile-screen-button me-2"></i>
+                                        Mobile Ecosystem</span>
+                                    <h3 class="p-card-title">ICON</h3>
+                                    <div class="p-card-tags">
+                                        <span class="p-card-tag">App Design</span>
+                                        <span class="p-card-tag">Interaction</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                    <div class="d-flex justify-content-center mb-5">
-                        <a href="https://instagram.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://linkedin.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://facebook.com" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://wa.me/919656216086" target="_blank" class="social-link hover-target"><i
-                                class="fa-brands fa-whatsapp"></i></a>
+                        <!-- Project 3 -->
+                        <div class="col-md-6 fade-up">
+                            <a href="#" class="p-card">
+                                <div class="p-card-media">
+                                    <img src="assets/images/work/gt.jpg" alt="Green Track">
+                                </div>
+                                <div class="p-card-info">
+                                    <span class="p-card-label"><i class="fa-solid fa-chart-line me-2"></i> SaaS &
+                                        Data</span>
+                                    <h3 class="p-card-title">Green Track</h3>
+                                    <div class="p-card-tags">
+                                        <span class="p-card-tag">Dashboard</span>
+                                        <span class="p-card-tag">Development</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="col-md-6 fade-up">
+                            <a href="https://elve.vercel.app/" target="_blank" class="p-card">
+                                <div class="p-card-media">
+                                    <img src="assets/images/work/elve-desktop.png" alt="ELVÉ">
+                                </div>
+                                <div class="p-card-info">
+                                    <span class="p-card-label"><i class="fa-solid fa-car-side me-2"></i> Luxury
+                                        Rental</span>
+                                    <h3 class="p-card-title">ELVÉ</h3>
+                                    <div class="p-card-tags">
+                                        <span class="p-card-tag">Premium UI</span>
+                                        <span class="p-card-tag">GSAP Motion</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- High-End Editorial Footer -->
+            <footer class="editorial-footer fade-up">
+                <div class="container-fluid px-lg-5">
+                    <div class="row footer-main-content align-items-center">
+                        <div class="col-lg-7">
+                            <h2 class="ultra-title text-start" style="font-size: 3.5rem;">Let's build <span
+                                    class="text-serif">extraordinary</span> <br> digital <span
+                                    class="text-italic-ultra">territories</span>.</h2>
+                        </div>
+                        <div class="col-lg-5 text-lg-end">
+                            <div class="footer-availability">
+                                <div class="pulse-dot"></div>
+                                <span>I'm currently available for freelance work</span>
+                            </div>
+                            <a href="mailto:muhammedklkm@gmail.com"
+                                class="footer-email-link magnetic">muhammedklkm@gmail.com</a>
+                        </div>
                     </div>
 
-                    <div class="border-top border-secondary pt-4">
-                        <p class="opacity-5 fs-0-9">&copy; 2025 Muhammed. All Rights Reserved.</p>
-                        <p class="opacity-5 fs-0-9">muhammedklkm@gmail.com | +91 9656 216 086</p>
+                    <div class="footer-bottom-info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="footer-copyright">&copy; 2025 Muhammed K. Built with precision.</p>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <div class="footer-social-minimal">
+                                    <a href="#" class="hover-target">Instagram</a>
+                                    <a href="#" class="hover-target">LinkedIn</a>
+                                    <a href="#" class="hover-target">X (Twitter)</a>
+                                    <a href="#" class="hover-target">WhatsApp</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </footer>

@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- MAGNEITC BUTTON EFFECT ---
-    const magneticElements = document.querySelectorAll('.btn:not(.stack-card .btn), .nav-link, .magnetic, .skill-tag');
+    const magneticElements = document.querySelectorAll('.btn:not(.stack-card .btn), .nav-link, .magnetic, .skill-tag, .skill-pill, .aurora-card');
 
     magneticElements.forEach(el => {
         el.addEventListener('mousemove', (e) => {
@@ -181,64 +181,117 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- MOBILE MENU TOGGLE ---
+    // --- FLOATING MENU TOGGLE (ROBUST VERSION) ---
     const menuToggle = document.querySelector('.menu-toggle');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    const menuLinks = document.querySelectorAll('.menu-overlay a');
+    const sidebarMenu = document.querySelector('.sidebar-menu');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const toggleIcon = menuToggle ? menuToggle.querySelector('i') : null;
 
-    if (menuToggle && menuOverlay) {
-        menuToggle.addEventListener('click', () => {
-            menuOverlay.classList.toggle('active');
-            // Animate hamburger to X
-            const lines = menuToggle.querySelectorAll('span');
-            if (menuOverlay.classList.contains('active')) {
-                gsap.to(lines[0], { rotate: 45, y: 8, duration: 0.3 });
-                gsap.to(lines[1], { opacity: 0, duration: 0.3 });
-                gsap.to(lines[2], { rotate: -45, y: -8, duration: 0.3 });
+    if (menuToggle && sidebarMenu) {
+        let menuTimeline = gsap.timeline({ paused: true });
+
+        // Build the reveal timeline once
+        menuTimeline
+            .to(sidebarMenu, {
+                opacity: 1,
+                visibility: 'visible',
+                y: 0,
+                duration: 0.5,
+                ease: "power4.out"
+            })
+            .fromTo(sidebarLinks,
+                { opacity: 0, y: -20 },
+                { opacity: 1, y: 0, stagger: 0.1, duration: 0.4, ease: "power2.out" },
+                "-=0.3"
+            );
+
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                sidebarMenu.classList.add('active');
+                menuTimeline.play();
+                if (toggleIcon) {
+                    toggleIcon.classList.replace('fa-bars', 'fa-xmark');
+                    gsap.to(toggleIcon, { rotation: 90, duration: 0.3 });
+                }
             } else {
-                gsap.to(lines[0], { rotate: 0, y: 0, duration: 0.3 });
-                gsap.to(lines[1], { opacity: 1, duration: 0.3 });
-                gsap.to(lines[2], { rotate: 0, y: 0, duration: 0.3 });
+                sidebarMenu.classList.remove('active');
+                menuTimeline.reverse();
+                if (toggleIcon) {
+                    toggleIcon.classList.replace('fa-xmark', 'fa-bars');
+                    gsap.to(toggleIcon, { rotation: 0, duration: 0.3 });
+                }
             }
         });
 
-        // Close menu on link click
-        menuLinks.forEach(link => {
+        // Auto-Active Navigation Link detection
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        sidebarLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+
             link.addEventListener('click', () => {
-                menuOverlay.classList.remove('active');
-                const lines = menuToggle.querySelectorAll('span');
-                gsap.to(lines[0], { rotate: 0, y: 0, duration: 0.3 });
-                gsap.to(lines[1], { opacity: 1, duration: 0.3 });
-                gsap.to(lines[2], { rotate: 0, y: 0, duration: 0.3 });
+                if (isMenuOpen) {
+                    isMenuOpen = false;
+                    sidebarMenu.classList.remove('active');
+                    menuTimeline.reverse();
+                    if (toggleIcon) {
+                        toggleIcon.classList.replace('fa-xmark', 'fa-bars');
+                        gsap.to(toggleIcon, { rotation: 0, duration: 0.3 });
+                    }
+                }
             });
+        });
+
+        // Close on Click Outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !sidebarMenu.contains(e.target)) {
+                isMenuOpen = false;
+                sidebarMenu.classList.remove('active');
+                menuTimeline.reverse();
+                if (toggleIcon) {
+                    toggleIcon.classList.replace('fa-xmark', 'fa-bars');
+                    gsap.to(toggleIcon, { rotation: 0, duration: 0.3 });
+                }
+            }
         });
     }
 
     // --- TYPEWRITER EFFECT ---
     const typewriterElement = document.getElementById('typewriter');
+    let type; // Define type variable in DOMContentLoaded scope
+
     if (typewriterElement) {
-        const words = ["Muhammed K", "Front-End Developer", "UI/UX Designer"];
+        const words = ["Muhammed K", "UI/UX Designer", "Front-End Developer"];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
         let typeSpeed = 150;
 
-        function type() {
+        type = function () {
             const currentWord = words[wordIndex];
 
             if (isDeleting) {
                 typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
                 charIndex--;
-                typeSpeed = 60; // Faster deletion
+                typeSpeed = 60;
             } else {
                 typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
                 charIndex++;
-                typeSpeed = 100 + Math.random() * 100; // Natural randomized typing
+                typeSpeed = 100 + Math.random() * 80;
             }
 
             if (!isDeleting && charIndex === currentWord.length) {
                 isDeleting = true;
-                typeSpeed = 2500; // Wait longer at the end
+                typeSpeed = 2500;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
@@ -246,10 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             setTimeout(type, typeSpeed);
-        }
-
-        // Start typing is now called from startSiteAnimations
-        // setTimeout(type, 2000);
+        };
     }
 
     // --- HERO ARROW SMOOTH SCROLL ---
@@ -299,82 +349,150 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-    // D. Works Stack Animation
-    const stackWrapper = document.querySelector('.stack-wrapper');
-    const cards = document.querySelectorAll('.stack-card');
-
-    if (stackWrapper && cards.length > 0) {
-        const isMobile = window.innerWidth <= 992;
-
-        // We pin the wrapper
-        ScrollTrigger.create({
-            trigger: '.stack-wrapper',
-            start: 'top top',
-            end: isMobile ? '+=150%' : '+=200%',
-            pin: true,
-            scrub: 1,
-            animation: gsap.timeline()
-                .fromTo(cards[1],
-                    { y: '100vh', scale: 0.9 },
-                    { y: isMobile ? '30px' : '40px', scale: 1, duration: 1 }
-                )
-                .fromTo(cards[2],
-                    { y: '100vh', scale: 0.9 },
-                    { y: isMobile ? '60px' : '80px', scale: 1, duration: 1 }
-                )
-        });
+    // C3. Skills Matrix Reveal
+    const skillsMatrix = document.querySelector('.matrix-grid');
+    const matrixItems = document.querySelectorAll('.m-item');
+    if (skillsMatrix && matrixItems.length > 0) {
+        gsap.fromTo(matrixItems,
+            { y: 60, opacity: 0 },
+            {
+                scrollTrigger: {
+                    trigger: skillsMatrix,
+                    start: 'top 85%',
+                },
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: 'expo.out'
+            }
+        );
     }
 
-    // E. Marquee
-    const marqueeContent = document.querySelector('.marquee-content');
-    if (marqueeContent) {
-        // Endless loop logic
-        const clone = marqueeContent.innerHTML;
-        marqueeContent.innerHTML += clone; // Duplicate for loop
+    // C4. Aurora Card Interactive Glow
+    const auroraCards = document.querySelectorAll('.aurora-card');
+    auroraCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        let tween = gsap.to(marqueeContent, {
-            xPercent: -50,
-            repeat: -1,
-            duration: 15,
-            ease: 'linear'
-        }).totalProgress(0.5);
+            gsap.to(card, {
+                '--x': `${x}px`,
+                '--y': `${y}px`,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
 
-        // Link speed to scroll
-        gsap.set(marqueeContent, { xPercent: -50 });
+    // C5. perspective Works Reveal & Parallax
+    const pItems = gsap.utils.toArray('.p-item');
+    if (pItems.length > 0) {
+        pItems.forEach((item) => {
+            const visual = item.querySelector('.p-visual img');
+            const content = item.querySelector('.p-content');
 
-        ScrollTrigger.create({
-            trigger: "body",
-            start: "top top",
-            end: "bottom bottom",
-            onUpdate: (self) => {
-                const scrollVelocity = self.getVelocity();
-                const direction = self.direction; // 1 or -1
-                // Dynamic speed (not fully implemented to keep it simple and bug-free for now)
-                // Just keeping the constant linear movement is safer for this request level
+            // 1. Content Reveal
+            if (content) {
+                gsap.fromTo(content,
+                    { opacity: 0, x: item.classList.contains('p-split-left') ? -50 : 50 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        duration: 1.2,
+                        ease: "power4.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%",
+                        }
+                    }
+                );
+            }
+
+            // 2. Visual Mask Reveal
+            if (visual) {
+                gsap.fromTo(visual.parentElement,
+                    { clipPath: "inset(0 100% 0 0)" },
+                    {
+                        clipPath: "inset(0 0% 0 0)",
+                        duration: 1.5,
+                        ease: "expo.inOut",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%",
+                        }
+                    }
+                );
+
+                // 3. Image Parallax
+                gsap.to(visual, {
+                    yPercent: 15,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
             }
         });
     }
 
+    // D. [REMOVED OLD STACK]
+
+    // E. Kinetic Typography Wall (GSAP Loops)
+    const kineticTracks = document.querySelectorAll('.kinetic-track');
+    kineticTracks.forEach((track, i) => {
+        const isRight = track.parentElement.classList.contains('row-right');
+
+        // Continuous Loop
+        const loop = gsap.to(track, {
+            xPercent: -50,
+            repeat: -1,
+            duration: 20,
+            ease: "none"
+        }).totalProgress(0.5);
+
+        if (isRight) loop.reverse();
+
+        // Scroll Velocity Boost
+        ScrollTrigger.create({
+            trigger: ".kinetic-marquee-section",
+            start: "top bottom",
+            end: "bottom top",
+            onUpdate: (self) => {
+                const velocity = Math.abs(self.getVelocity() / 500);
+                gsap.to(loop, {
+                    timeScale: isRight ? -(1 + velocity) : (1 + velocity),
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+            }
+        });
+    });
+
     // --- 4. ACCORDION (FAQ) ---
-    const accordions = document.querySelectorAll('.accordion-header');
+    const accordions = document.querySelectorAll('.u-faq-trigger');
     accordions.forEach(acc => {
         acc.addEventListener('click', function () {
-            const item = this.parentElement;
-            const content = this.nextElementSibling;
+            const item = this.closest('.u-faq-item');
+            const body = item.querySelector('.u-faq-body');
 
-            // Close others (optional, but requested "accordion style")
-            document.querySelectorAll('.accordion-item').forEach(other => {
+            // Close others 
+            document.querySelectorAll('.u-faq-item').forEach(other => {
                 if (other !== item) {
                     other.classList.remove('active');
-                    other.querySelector('.accordion-content').style.height = 0;
+                    other.querySelector('.u-faq-body').style.height = 0;
                 }
             });
 
             item.classList.toggle('active');
             if (item.classList.contains('active')) {
-                content.style.height = content.scrollHeight + 'px';
+                body.style.height = body.scrollHeight + 'px';
             } else {
-                content.style.height = 0;
+                body.style.height = 0;
             }
         });
     });
@@ -405,5 +523,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+    // --- 6. FOOTER REMOVED (Pending New Design) ---
 
+    // Final refresh to ensure markers and positions are correct
+    ScrollTrigger.refresh();
 });
